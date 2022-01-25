@@ -1,22 +1,75 @@
-﻿namespace DIM
-{
-    public class CustomerDataAccess
-    {
-        public CustomerDataAccess() { }
+﻿/*
+ using System;
+namespace SolidPrinciples.Dependency.Invertion.Before{
+   public class Email{
+      public string ToAddress { get; set; }
+      public string Subject { get; set; }
+      public string Content { get; set; }
+      public void SendEmail(){
+         //Send email
+      }
+   }
+   public class SMS{
+      public string PhoneNumber { get; set; }
+      public string Message { get; set; }
+      public void SendSMS(){
+         //Send sms
+      }
+   }
+   public class Notification{
+      private Email _email;
+      private SMS _sms;
+      public Notification(){
+         _email = new Email();
+         _sms = new SMS();
+      }
+      public void Send(){
+         _email.SendEmail();
+         _sms.SendSMS();
+      }
+   }
+}
+ */
 
-        public String GetCustomerNameDataAccess()
+using System.Collections.Generic;
+namespace SolidPrinciples.Dependency.Invertion.Before
+{
+    public interface IMessage
+    {
+        void SendMessage();
+    }
+    public class Email : IMessage
+    {
+        public string ToAddress { get; set; }
+        public string Subject { get; set; }
+        public string Content { get; set; }
+        public void SendMessage()
         {
-            return "Customer Name";
+            //Send email
         }
     }
-
-    public class CustomerBL
+    public class SMS : IMessage
     {
-        public CustomerBL() { }
-        public void GetCustomerNameBL()
+        public string PhoneNumber { get; set; }
+        public string Message { get; set; }
+        public void SendMessage()
         {
-            CustomerDataAccess customerDataAccess = new CustomerDataAccess();
-            customerDataAccess.GetCustomerNameDataAccess();
+            //Send Sms
+        }
+    }
+    public class Notification
+    {
+        private ICollection<IMessage> _messages;
+        public Notification(ICollection<IMessage> messages)
+        {
+            this._messages = messages;
+        }
+        public void Send()
+        {
+            foreach (var message in _messages)
+            {
+                message.SendMessage();
+            }
         }
     }
 }
