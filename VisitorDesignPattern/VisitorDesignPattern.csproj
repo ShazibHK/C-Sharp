@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA9B325B-7749-459B-9266-384E36328454}</ProjectGuid>
+    <ProjectGuid>{BDAEEE43-3A27-4A65-B7DE-C1B3D658E9D6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BuilderPattern2</RootNamespace>
-    <AssemblyName>BuilderPattern2</AssemblyName>
+    <RootNamespace>VisitorDesignPattern</RootNamespace>
+    <AssemblyName>VisitorDesignPattern</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HeroBuilder.cs" />
-    <Compile Include="HondaBuilder.cs" />
-    <Compile Include="IVehicleBuilder.cs" />
+    <Compile Include="Doctor.cs" />
+    <Compile Include="IElement.cs" />
+    <Compile Include="IVisitor.cs" />
+    <Compile Include="Kid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vehicle.cs" />
+    <Compile Include="Salesman.cs" />
+    <Compile Include="School.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

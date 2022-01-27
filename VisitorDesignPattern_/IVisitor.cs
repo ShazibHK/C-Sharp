@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace BuilderPattern4
+namespace VisitorDesignPattern_
 {
-    internal class Program
+    public interface IVisitor
     {
-        static void Main(string[] args)
-        {
-        }
+        void Visit(IElement element);
     }
 }
