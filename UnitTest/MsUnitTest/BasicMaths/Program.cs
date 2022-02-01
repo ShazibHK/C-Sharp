@@ -12,6 +12,7 @@ namespace BasicMaths
         {
             ArithmeticFunctions arr=new ArithmeticFunctions();
             arr.Add(2, 1);
+            Console.ReadLine()
         }
     }
 }

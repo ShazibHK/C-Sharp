@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace Bank
 {
     public class Program
@@ -14,6 +12,7 @@ namespace Bank
         {
 
             Console.WriteLine("Main Method");
+            Console.Readline();
         }
     }
     /// <summary>
